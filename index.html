@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="christmas.css">
+    <title>Merry Christmas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Playwrite+PE+Guides&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="name-form" style="text-align: center; margin-top: 15%;">
+        <h1 style="font-size: 5em; color: hsl(0, 26%, 7%);">Please enter your   FULLNAME to continue <br>(lowercase please)</h1>
+        <input type="text" id="user-name" placeholder="Enter your name" style="padding: 20px; font-size: 2rem;  margin-top: 5vh;" />
+        <button onclick="verifyName()" style="padding: 20px 20px; font-size: 2rem; cursor: pointer;">Submit</button>
+        <p id="error-message" style="color: red; display: none; font-size: 2.5em; margin-top: 10vh; font-weight:  bold">I only know 1 name. Please try again.</p>
+    </div>
+
+    <div id="content" style="display: none; ">
+        <div class="container">
+            <div class="elch"></div>
+            <div class="merrychristmas"></div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">Hello, How are you?</div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">I just want to thank you for being there anytime,</div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">For understanding me even if it's too hard. </div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">I would like to thank you also for being my support pillar whenever i want to give up.</div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">Thank you for being consistent through out those many years.</div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">I am looking forward to still be with you for more christmas to come.</div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">Also, I will never forget how impactful you were to my life.</div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">Not just being a friend, but being anyone and anything a person could wish for.</div>
+        </div>
+        <div class="c-text-container" style="margin-top: 10vh;">
+            <div class="c-text">Again, Thank you for everything. Merry Christmas, Abegail!! </div>
+        </div>
+        <div class="snowflakes" id="snowflakes"></div>
+    </div>
+
+    <script>
+      function verifyName() {
+    const correctName = "tirsah abegail pabustan"; 
+    const userName = document.getElementById("user-name").value;
+
+    if (userName === correctName) {
+        document.getElementById("name-form").style.display = "none";
+        document.getElementById("content").style.display = "block";
+
+        const sContainer = document.getElementById("snowflakes");
+        let htmlStr = "";
+        let pos;
+        for (let i = 0; i < 12; i++) {
+            pos = Math.floor(Math.random() * 110) - 15;
+            htmlStr += '<div class="snowflake" style="left: ' + pos + '%"><div class="inner yellow">⭐</div></div>';
+        }
+        for (let i = 0; i < 12; i++) {
+            pos = Math.floor(Math.random() * 110) - 15;
+            htmlStr += '<div class="snowflake"  style="left: ' + pos + '%"><div class="inner gray">❄️</div></div>';
+        }
+        for (let i = 0; i < 12; i++) {
+            pos = Math.floor(Math.random() * 110) - 15;
+            htmlStr += '<div class="snowflake"  style="left: ' + pos + '%"><div class="inner dark"></div></div>';
+        }
+        for (let i = 0; i < 12; i++) {
+            pos = Math.floor(Math.random() * 110) - 15;
+            htmlStr += '<div class="snowflake"  style="left: ' + pos + '%"><div class="inner light">☃️</div></div>';
+        }
+        sContainer.innerHTML = htmlStr;
+    } else {
+        const errorMessage = document.getElementById("error-message");
+        errorMessage.style.display = "block";
+        setTimeout(() => {
+            errorMessage.style.display = "none";
+        }, 1500); 
+    }
+}
+
+    </script>
+</body>
+</html>

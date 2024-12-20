@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&family=Saira:wght@200;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --color-primary:#000000;
+    --color-secondary:#0f659e;
+    --color-highlight:#ff0000;
+    --color-light:#726969;
+    --color-dark:white;
+    --color-white:#FFFFFF;
+    --color-bluegray:#2e8ee9;
+    --color-greenblue:#5ca19f;
+    --color-beige:#faeacc;
+    --color-danger: #ee2020;
+    --transparent-white: rgba(255, 255, 255, 0.9);
+    --padding-general: 15px;
+    --padding-table: 5px;
+    --duration-c-text-scroll: 2.2s;
+    --animation-delay-c-text-scroll: 1.5s;
+}
+
+body {
+    background-color:hsl(209, 72%, 86%);
+    ;
+}
+
+.c-text-container {
+    position: absolute;
+    text-decoration: none; /* Remove underlines */
+    border: none;          /* Remove borders */
+    outline: none;  
+    top: 0;
+    left: -57vw;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    animation-name: text-movement;
+    animation-duration: var(--duration-c-text-scroll);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+.c-text-container:nth-of-type(11n+1) {
+    animation-delay: 0s;
+}
+.c-text-container:nth-of-type(11n+2) {
+    animation-delay: var(--animation-delay-c-text-scroll);
+    top: 3em;
+}
+.c-text-container:nth-of-type(11n+3) {
+    animation-delay: calc(2*var(--animation-delay-c-text-scroll));
+    top: 6em;
+}
+.c-text-container:nth-of-type(11n+4) {
+    animation-delay: calc(3*var(--animation-delay-c-text-scroll));
+    top: 9em;
+}
+.c-text-container:nth-of-type(11n+5) {
+    animation-delay: calc(4*var(--animation-delay-c-text-scroll));
+    top: 12em;
+}
+.c-text-container:nth-of-type(11n+6) {
+    animation-delay: calc(5*var(--animation-delay-c-text-scroll));
+    top: 15em;
+}
+.c-text-container:nth-of-type(11n+7) {
+    animation-delay: calc(6*var(--animation-delay-c-text-scroll));
+    top: 18em;
+}
+.c-text-container:nth-of-type(11n+8) {
+    animation-delay: calc(7*var(--animation-delay-c-text-scroll));
+    top: 21em;
+}
+.c-text-container:nth-of-type(11n+9) {
+    animation-delay: calc(8*var(--animation-delay-c-text-scroll));
+    top: 24em;
+}
+.c-text-container:nth-of-type(11n+10) {
+    animation-delay: calc(9*var(--animation-delay-c-text-scroll));
+    top: 27em;
+}
+.c-text-container:nth-of-type(11n+11) {
+    animation-delay: calc(11*var(--animation-delay-c-text-scroll));
+    top: 33em;
+}
+
+@keyframes text-movement {
+    0% {transform:translateX(0)}
+    100%{transform:translateX(60vw)}
+}
+
+.c-text {
+    display: flex;
+    gap: .2em;
+    font-family: "Playwrite", serif;
+    font-weight: 400;
+    font-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-size: 2em;
+    color: black;
+    text-shadow: 0 0 0;
+}
+
+
+.yellow {
+    color: var(--color-highlight);
+}
+
+.gray {
+    color: var(--color-bluegray);
+} 
+
+.dark {
+    color: var(--color-dark);
+} 
+
+.light {
+    color: var(--color-light);
+} 
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container .elch {
+    position: absolute;
+    left:78vh;
+    top: 24vh;
+    background-color: none;
+    background-image: url("img/reindeer-removebg-preview.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 80%;
+    transform: rotateZ(-35deg);
+    z-index: 0;
+}
+
+.container .merrychristmas {
+    position: absolute;
+    top: 15vh;
+    left: -88vw;
+    background-image: url("img/KOMO_Adventskalender-3-MerryChristmas.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 150%;
+    z-index: 1;
+    animation-name: merry-christmas;
+    animation-duration: 2s;
+    animation-delay: calc(13*var(--animation-delay-c-text-scroll));
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes merry-christmas {
+    0% {transform: translateX(0vw);}
+    100% {transform: translateX(90vw);}
+}
+
+@keyframes koco-logo {
+    0% {transform: translateY(0vh);}
+    100% {transform: translateY(30vh);}
+}
+
+.snowflake {
+  font-size: 2em;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.snowflake,.snowflake .inner {
+    animation-iteration-count:infinite;
+    animation-play-state:running
+}
+@keyframes snowflakes-fall {
+    0% {transform:translateY(0)}
+    100%{transform:translateY(110vh)}
+}
+@keyframes 
+snowflakes-shake {
+    0%,100%{transform:translateX(0)}
+    50%{transform:translateX(30px)}
+}
+.snowflakes .snowflake {
+    position:fixed;
+    top:-10%;
+    z-index:9999;
+    -webkit-user-select:none;
+    user-select:none;
+    cursor:default;
+    animation-name:snowflakes-shake;
+    animation-duration:3s;
+    animation-timing-function:ease-in-out;
+}
+
+.snowflakes .snowflake .inner {
+    animation-duration:10s;
+    animation-name:snowflakes-fall;
+    animation-timing-function:linear
+}
+
+.light {
+    background-color: var(--color-light);
+    border-radius: 100%;
+    width: .5em;
+    height: .5em;
+}
+
+.dark {
+    background-color: var(--color-dark);
+    border-radius: 100%;
+    width: .5em;
+    height: .5em;
+}
+
+.snowflakes .snowflake:nth-of-type(5n){
+    animation-delay:.5s;
+}
+.snowflakes .snowflake:nth-of-type(5n+1){
+    animation-delay:1s;
+}
+.snowflakes .snowflake:nth-of-type(5n+2){
+    animation-delay:1.2s;
+    animation-duration:5s;
+}
+.snowflakes .snowflake:nth-of-type(5n+3){
+    animation-delay:1.5s;
+    animation-duration:4s;
+}
+.snowflakes .snowflake:nth-of-type(5n+4){
+    animation-delay:1.7s;
+    animation-duration:2s;
+}
+
+.snowflakes .snowflake:nth-of-type(5n) .inner {
+    animation-delay:0s;
+}
+
+.snowflakes .snowflake:nth-last-of-type(5n+1) .inner {
+    animation-delay:2s;
+}
+
+.snowflakes .snowflake:nth-last-of-type(5n+2) .inner {
+    animation-delay:4s;
+}
+
+.snowflakes .snowflake:nth-last-of-type(5n+3) .inner {
+    animation-delay:6s;
+}
+
+.snowflakes .snowflake:nth-last-of-type(5n+4) .inner {
+    animation-delay:8s;
+}
+
+.snowflakes .snowflake:nth-of-type(3n) .inner {
+    animation-delay:1s;
+}
+
+.snowflakes .snowflake:nth-last-of-type(3n+1) .inner {
+    animation-delay:3s;
+}
+
+.snowflakes .snowflake:nth-last-of-type(3n+2) .inner {
+    animation-delay:7s;
+}
+
